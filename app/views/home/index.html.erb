@@ -5,7 +5,7 @@
   </head>
   <body>
     <div>
-      <table>
+      <table border="1">
         <thead>
           <tr>
             <th>Job</th>
@@ -31,21 +31,18 @@
                     </td>
                     <td rowspan="<%=applicant.span%>"><%= applicant.cover_letter %></td>
             </tr>
-                  <% applicant.additional_skills.each do |skill| %>
-                    <tr>
-                      <td><%= skill.name %></td>
-                    </tr>
-                  <% end %>
-                 
-              <% end %>
-              
+                    <% applicant.additional_skills.each do |skill| %>
+                      <tr>
+                        <td><%= skill.name %></td>
+                      </tr>
+                    <% end %>
+              <% end %>     
           <% end %>
-
         </tbody>
 
         <tfooter>
           <tr>
-            <td>8 Applicants, 11 Unique Skills</td>
+            <td colspan="6"><%=@app_count%> Applicants, <%=Skill.unique_skills%> Unique Skills</td>
           </tr>
         </tfooter>
       </table>
