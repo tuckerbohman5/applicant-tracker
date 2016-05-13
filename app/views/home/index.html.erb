@@ -40,19 +40,23 @@
             <tr>
               <td rowspan="10" class="job-name"><%= job.name %></td>
               <% job.applicants.each do |applicant| %>
+                <tr>
                     <td rowspan="3" class="applicant-name"><%= applicant.name%></td>
                     <td rowspan="3"><a href="mailto:<%= applicant.email %>"><%= applicant.email %></a></td>
-                    <td rowspan="3"><a href="http://<%= applicant.website %>/"><%= applicant.website %></a></td>
-                    <td><%= applicant.first_skill.name %></td>
+                    <td rowspan="3"><a href="http://<%= applicant.website %>/"><%= applicant.website %></td>
+                    <td>
+                      <%= applicant.first_skill.name %>
+                    </td>
                     <td rowspan="3"><%= applicant.cover_letter %></td>
-                  </tr>
+            <!-- </tr> -->
                   <% applicant.additional_skills.each do |skill| %>
                     <tr>
                       <td><%= skill.name %></td>
                     </tr>
                   <% end %>
+                 </tr> 
               <% end %>
-             </tr> 
+            </tr>  
           <% end %>
 
             <!-- <tr>
