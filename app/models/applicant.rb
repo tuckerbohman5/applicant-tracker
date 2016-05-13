@@ -11,4 +11,8 @@ class Applicant < ActiveRecord::Base
     skills.last(count)
   end
 
+  def span
+    skills.count
+  end
+
 end
